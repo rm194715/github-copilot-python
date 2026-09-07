@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Sudoku Game</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <h1>Sudoku Game</h1>
+
+  <main class="game-container">
+    <div id="sudoku-board" role="region" aria-label="Sudoku Board"></div>
+
+    <div class="controls">
+      <div class="control-group">
+        <label for="difficulty-select">Difficulty:</label>
+        <select id="difficulty-select">
+          <option value="easy">Easy</option>
+          <option value="medium" selected>Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </div>
+
+      <div class="button-group">
+        <button id="new-game" type="button">New Game</button>
+        <button id="check-solution" type="button">Check Solution</button>
+        <button id="hint" type="button">Hint</button>
+        <button id="theme-toggle" type="button">Dark Mode</button>
+      </div>
+
+      <div class="status-panel">
+        <span id="timer" aria-live="off">00:00</span>
+        <span id="message" role="status" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <!-- Leaderboard / Top 10 LocalStorage Section -->
+    <section class="scoreboard-container">
+      <h2>Top 10 Fast Times</h2>
+      <table id="scoreboard-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Time</th>
+            <th>Difficulty</th>
+          </tr>
+        </thead>
+        <tbody id="scoreboard-body">
+          <!-- Populated by main.js -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="/static/main.js"></script>
+</body>
+</html>
